@@ -1,3 +1,5 @@
+## TODO Use Redux/Flux to make this more useful for large size projects.
+
 # Spring React Template
 
 Often developers choose to have two separate projects (frontend & backend)
