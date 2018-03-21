@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+task npmInstall(type: Exec) {
+    commandLine 'npm', 'install'
+}
+
+task npmBuild(type: Exec) {
+    commandLine 'npm', 'run', 'build'
+
+    dependsOn npmInstall
+}
+
+jar {
+    from(fileTree("${projectDir}/dist")) {
+        into "META-INF/resources"
+    }
+
+    dependsOn npmBuild
+}
